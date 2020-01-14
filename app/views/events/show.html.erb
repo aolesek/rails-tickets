@@ -1,42 +1,34 @@
+<h1>Event <%= @event.artist %></h1>
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Artist:</strong>
   <%= @event.artist %>
 </p>
 
-<%
-=begin%>
- <p>
-  <strong>Seat id seq:</strong>
-  <%= @ticket.seat_id_seq %>
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
 </p>
 
 <p>
-  <strong>Address:</strong>
-  <%= @ticket.address %>
+  <strong>Price low:</strong>
+  <%= @event.price_low %>
 </p>
 
 <p>
-  <strong>Price:</strong>
-  <%= @ticket.price %>
+  <strong>Price high:</strong>
+  <%= @event.price_high %>
 </p>
 
 <p>
-  <strong>Email address:</strong>
-  <%= @ticket.email_address %>
+  <strong>Date:</strong>
+  <%= @event.event_date %>
 </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @ticket.phone %>
-</p> 
-<%
-=end%>
-<%
-=begin%>
- 
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%= link_to 'Back', tickets_path %> 
-<%
-=end%>
+<%= render "tickets_list", tickets: @event.tickets %>
+
+<%= render "new_ticket", ticket: Ticket.new( :event_id=>@event.id) %>
+
+<%= link_to 'All events', events_path %>

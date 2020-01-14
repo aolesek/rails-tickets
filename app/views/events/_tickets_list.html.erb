@@ -1,7 +1,6 @@
-<p id="notice"><%= notice %></p>
+<h1>Tickets for this event</h1>
 
-<h1>Tickets</h1>
-
+<% if tickets.length() > 0 %>       
 <table>
   <thead>
     <tr>
@@ -10,15 +9,13 @@
       <th>Address</th>
       <th>Price</th>
       <th>Email address</th>
-          <th>Phone</th>
-           <th>Event</th>
-
+      <th>Phone</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @tickets.each do |ticket| %>
+    <% tickets.each do |ticket| %>
       <tr>
         <td><%= ticket.name %></td>
         <td><%= ticket.seat_id_seq %></td>
@@ -26,7 +23,6 @@
         <td><%= ticket.price %></td>
         <td><%= ticket.email_address %></td>
         <td><%= ticket.phone %></td>
-                <td><%= ticket.event_id %></td>
         <td><%= link_to 'Show', ticket %></td>
         <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
         <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -34,7 +30,7 @@
     <% end %>
   </tbody>
 </table>
+<% else %> 
+<p>There are no bookings for this event yet</p>
+<% end %>
 
-<br>
-
-<%= link_to 'New Ticket', new_ticket_path %>
