@@ -27,9 +27,9 @@
         <td><%= ticket.email_address %></td>
         <td><%= ticket.phone %></td>
                 <td><%= ticket.event_id %></td>
-        <td><%= link_to 'Show', ticket %></td>
-        <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', ticket, class: 'btn btn-primary text-light' %></td>
+        <td><%= link_to 'Edit', edit_ticket_path(ticket), class: 'btn btn-primary text-light' %></td>
+        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary text-light' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -37,4 +37,4 @@
 
 <br>
 
-<%= link_to 'New Ticket', new_ticket_path %>
+<%= link_to 'New Ticket', new_ticket_path, class: 'btn btn-primary text-light' %>

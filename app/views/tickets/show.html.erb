@@ -42,6 +42,8 @@
 <%= render 'event', event: @ticket.event %>
 </table>
 
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%= link_to 'All tickets', tickets_path %> |
-<%= link_to 'Event', @ticket.event %>
+<div class="btn-group" role="group" aria-label="Basic example">
+<%= link_to 'Edit', edit_ticket_path(@ticket), class: 'btn btn-primary text-light' %>
+<%= link_to 'All tickets', tickets_path, class: 'btn btn-primary text-light' %>
+<%= link_to 'Event', @ticket.event, class: 'btn btn-primary text-light' %>
+</div>

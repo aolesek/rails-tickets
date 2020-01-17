@@ -2,6 +2,11 @@
 
 <%= render 'form', ticket: @ticket, target: @ticket %>
 
-<%= link_to 'Show', @ticket %> |
+
+<div class="btn btn-primary">
+ <%= link_to 'Show', @ticket %> |
 <%= link_to 'All tickets', tickets_path %> |
 <%= link_to 'Event', @ticket.event %>
+</div>
+
+

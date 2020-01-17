@@ -26,9 +26,9 @@
   <strong>Date:</strong>
   <%= @event.event_date %>
 </p>
-
+<%= link_to 'All events', events_path, class: 'btn btn-primary text-light' %>
 <%= render "tickets_list", tickets: @event.tickets %>
 
 <%= render "new_ticket", ticket: Ticket.new( :event_id=>@event.id) %>
 
-<%= link_to 'All events', events_path %>
+
