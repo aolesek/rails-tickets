@@ -37,13 +37,22 @@
   <%= @ticket.event_id %>
 </p>
 
+<p>
+<% if @ticket.user_id != nil %>
+  <strong>Owner:</strong>
+  <%= User.find(@ticket.user_id)&.email %>
+  <% end %>
+</p>
+
 <h1>Event</h1>
 <table>
 <%= render 'event', event: @ticket.event %>
 </table>
 
 <div class="btn-group" role="group" aria-label="Basic example">
+<% if @ticket.user == current_user %>
 <%= link_to 'Edit', edit_ticket_path(@ticket), class: 'btn btn-primary text-light' %>
+<% end %>
 <%= link_to 'All tickets', tickets_path, class: 'btn btn-primary text-light' %>
 <%= link_to 'Event', @ticket.event, class: 'btn btn-primary text-light' %>
 </div>

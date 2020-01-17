@@ -24,8 +24,10 @@
         <td><%= ticket.email_address %></td>
         <td><%= ticket.phone %></td>
         <td><%= link_to 'Show', ticket, class: 'btn btn-primary text-light' %></td>
+                <% if ticket.user == current_user %>
         <td><%= link_to 'Edit', edit_ticket_path(ticket), class: 'btn btn-primary text-light' %></td>
         <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary text-light' %></td>
+              <% end %>
       </tr>
     <% end %>
   </tbody>

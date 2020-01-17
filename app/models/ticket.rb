@@ -23,4 +23,5 @@ class Ticket < ApplicationRecord
     validate :ticket_limit
 
     belongs_to :event
+    belongs_to :user
 end

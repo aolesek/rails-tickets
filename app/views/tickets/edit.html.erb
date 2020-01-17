@@ -3,10 +3,10 @@
 <%= render 'form', ticket: @ticket, target: @ticket %>
 
 
-<div class="btn btn-primary">
- <%= link_to 'Show', @ticket %> |
-<%= link_to 'All tickets', tickets_path %> |
-<%= link_to 'Event', @ticket.event %>
+<div class="btn-group" role="group" aria-label="Basic example">
+ <%= link_to 'Show', @ticket,class: 'btn btn-primary text-light' %> 
+<%= link_to 'All tickets', tickets_path,class: 'btn btn-primary text-light' %> 
+<%= link_to 'Event', @ticket.event,class: 'btn btn-primary text-light' %>
 </div>
 
 
